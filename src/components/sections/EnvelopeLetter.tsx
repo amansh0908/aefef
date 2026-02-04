@@ -1,0 +1,135 @@
+import { useState, useEffect, useRef } from 'react';
+import { Heart, Mail } from 'lucide-react';
+
+const EnvelopeLetter = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // ============================================
+  // 💌 CUSTOMIZE YOUR LOVE LETTER HERE:
+  // ============================================
+  const letterContent = `My Love Shahin,
+
+You are my happiness, my peace, and my home. 
+Every moment with you feels magical.
+
+From the first time we talked, I knew there was 
+something special about you. Your smile lights up 
+my world, and your laugh is my favorite sound.
+
+I promise to love you today, tomorrow, and always.
+You are my forever, my everything.
+
+With all my heart,
+— Aman ❤️`;
+
+  return (
+    <section
+      ref={sectionRef}
+      className="min-h-screen flex flex-col items-center justify-center p-6 py-20 relative"
+    >
+      {/* Section Title */}
+      <div
+        className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
+        <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
+        <h2 className="font-romantic text-3xl md:text-4xl text-foreground mb-2">
+          Read My Heart…
+        </h2>
+        <p className="text-muted-foreground">Click the envelope to open</p>
+      </div>
+
+      {/* Envelope Container */}
+      <div
+        className={`relative perspective-1000 cursor-pointer transition-all duration-1000 delay-300 ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+        }`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {/* Envelope */}
+        <div className="relative w-80 md:w-96 h-56 md:h-64">
+          {/* Envelope Body */}
+          <div className="absolute inset-0 bg-gradient-to-br from-peach to-cream rounded-lg shadow-romantic">
+            {/* Envelope Back Flap */}
+            <div
+              className={`absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-br from-peach-dark to-peach origin-top transition-transform duration-700 ${
+                isOpen ? 'animate-envelope-open' : ''
+              }`}
+              style={{
+                clipPath: 'polygon(0 0, 50% 100%, 100% 0)',
+                transformStyle: 'preserve-3d',
+                transform: isOpen ? 'rotateX(-180deg)' : 'rotateX(0deg)',
+              }}
+            />
+            
+            {/* Envelope Front Triangle */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-secondary to-peach"
+              style={{
+                clipPath: 'polygon(0 100%, 50% 20%, 100% 100%)',
+              }}
+            />
+
+            {/* Heart Seal */}
+            <div
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-500 ${
+                isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+              }`}
+            >
+              <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center shadow-soft">
+                <Heart className="w-8 h-8 text-primary fill-primary" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Letter (appears when opened) */}
+        <div
+          className={`absolute top-0 left-1/2 -translate-x-1/2 w-72 md:w-80 transition-all duration-700 ${
+            isOpen
+              ? 'opacity-100 -translate-y-full'
+              : 'opacity-0 translate-y-0 pointer-events-none'
+          }`}
+          style={{ transitionDelay: isOpen ? '0.3s' : '0s' }}
+        >
+          <div className="paper-texture rounded-lg p-6 md:p-8 shadow-romantic">
+            <pre className="font-cursive text-lg md:text-xl text-foreground whitespace-pre-wrap leading-relaxed">
+              {letterContent}
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      {/* Hint */}
+      <p
+        className={`mt-8 text-sm text-muted-foreground transition-opacity duration-500 ${
+          isOpen ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        Tap to {isOpen ? 'close' : 'open'} 💌
+      </p>
+    </section>
+  );
+};
+
+export default EnvelopeLetter;
