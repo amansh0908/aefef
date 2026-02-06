@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import { Lock, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -8,7 +8,7 @@ interface VaultLockScreenProps {
 
 const CORRECT_PASSWORD = '27042024';
 
-const VaultLockScreen = ({ onUnlock }: VaultLockScreenProps) => {
+const VaultLockScreen = forwardRef<HTMLDivElement, VaultLockScreenProps>(({ onUnlock }, ref) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [unlocking, setUnlocking] = useState(false);
@@ -131,6 +131,8 @@ const VaultLockScreen = ({ onUnlock }: VaultLockScreenProps) => {
       </div>
     </div>
   );
-};
+});
+
+VaultLockScreen.displayName = 'VaultLockScreen';
 
 export default VaultLockScreen;

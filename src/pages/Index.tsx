@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import FloatingHearts from '@/components/FloatingHearts';
 import MusicPlayer from '@/components/MusicPlayer';
 import VaultLockScreen from '@/components/sections/VaultLockScreen';
@@ -10,7 +10,7 @@ import WhyILoveYou from '@/components/sections/WhyILoveYou';
 import OpenWhenLetters from '@/components/sections/OpenWhenLetters';
 import FinalSurprise from '@/components/sections/FinalSurprise';
 
-const Index = () => {
+const Index = forwardRef(() => {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   if (!isUnlocked) {
@@ -59,6 +59,8 @@ const Index = () => {
       </main>
     </div>
   );
-};
+});
+
+Index.displayName = 'Index';
 
 export default Index;
