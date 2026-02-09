@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Sparkles, Moon } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 
 const HowItBegan = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +11,7 @@ const HowItBegan = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -25,14 +23,16 @@ const HowItBegan = () => {
 
   const moments = [
     {
-      icon: Sparkles,
       title: 'First Hello',
-      emoji: '✨',
+      emoji: '💬 ✨',
+      description: 'A simple "hi" that turned into endless conversations and unexpected feelings.',
+      align: 'right' as const,
     },
     {
-      icon: Moon,
       title: 'Late Night Talks',
-      emoji: '🌙',
+      emoji: '❤️ 🌙',
+      description: 'Talking till midnight, sharing secrets, laughing softly, and forgetting the world.',
+      align: 'left' as const,
     },
   ];
 
@@ -43,40 +43,46 @@ const HowItBegan = () => {
     >
       {/* Section Title */}
       <div
-        className={`text-center mb-16 transition-all duration-1000 ${
+        className={`text-center mb-4 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         <h2 className="font-romantic text-3xl md:text-4xl lg:text-5xl text-foreground">
-          How It All Began…
+          Our Story
         </h2>
+        <p className="text-muted-foreground mt-2 text-base">How it all began...</p>
       </div>
 
-      {/* Cards */}
-      <div className="flex flex-col md:flex-row gap-8 max-w-2xl">
+      {/* Timeline Cards */}
+      <div className="relative w-full max-w-3xl mt-12 flex flex-col gap-16">
+        {/* Vertical center line (hidden on mobile) */}
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-primary/20 -translate-x-1/2" />
+
         {moments.map((moment, index) => (
-          <Card
+          <div
             key={moment.title}
-            className={`group relative p-8 md:p-10 rounded-2xl bg-card/80 backdrop-blur-sm border-primary/20 shadow-soft hover:shadow-romantic transition-all duration-500 cursor-default ${
+            className={`relative flex w-full ${
+              moment.align === 'right' ? 'md:justify-end' : 'md:justify-start'
+            } justify-center transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
-            style={{ transitionDelay: `${index * 200 + 300}ms` }}
+            style={{ transitionDelay: `${index * 300 + 300}ms` }}
           >
-            {/* Glow Effect on Hover */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-lavender/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Dot on timeline (hidden on mobile) */}
+            <div className="hidden md:block absolute left-1/2 top-8 w-3 h-3 rounded-full bg-primary/40 -translate-x-1/2 z-10" />
 
-            {/* Icon */}
-            <div className="relative mb-6 flex justify-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                <moment.icon className="w-8 h-8 text-primary" />
+            <div
+              className={`w-full md:w-[45%] bg-card/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-soft border border-primary/10 hover:shadow-romantic transition-shadow duration-500`}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xl">{moment.emoji}</span>
+                <h3 className="font-semibold text-lg text-foreground">{moment.title}</h3>
               </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {moment.description}
+              </p>
             </div>
-
-            {/* Title */}
-            <h3 className="relative font-romantic text-2xl text-center text-foreground group-hover:text-primary transition-colors duration-300">
-              {moment.title} {moment.emoji}
-            </h3>
-          </Card>
+          </div>
         ))}
       </div>
     </section>
