@@ -59,26 +59,34 @@ With all my heart,
         <p className="text-muted-foreground">Click the envelope to open</p>
       </div>
 
-      {/* Envelope Container */}
+      {/* Envelope + Letter Container */}
       <div
-        className={`relative perspective-1000 cursor-pointer transition-all duration-1000 delay-300 ${
+        className={`relative cursor-pointer transition-all duration-1000 delay-300 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {/* Envelope */}
-        <div className="relative w-80 md:w-96 h-56 md:h-64">
-          {/* Envelope Body */}
+        {/* Letter (sits behind envelope, revealed when envelope slides down) */}
+        <div className="relative w-80 md:w-96 z-0">
+          <div className="paper-texture rounded-lg p-6 md:p-8 shadow-romantic">
+            <pre className="font-cursive text-lg md:text-xl text-foreground whitespace-pre-wrap leading-relaxed">
+              {letterContent}
+            </pre>
+          </div>
+        </div>
+
+        {/* Envelope (slides down to reveal letter) */}
+        <div
+          className={`absolute top-0 left-0 w-80 md:w-96 h-56 md:h-64 z-10 transition-all duration-700 ease-in-out ${
+            isOpen ? 'translate-y-[calc(100%+1.5rem)]' : 'translate-y-0'
+          }`}
+        >
           <div className="absolute inset-0 bg-gradient-to-br from-peach to-cream rounded-lg shadow-romantic">
             {/* Envelope Back Flap */}
             <div
-              className={`absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-br from-peach-dark to-peach origin-top transition-transform duration-700 ${
-                isOpen ? 'animate-envelope-open' : ''
-              }`}
+              className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-br from-peach-dark to-peach origin-top"
               style={{
                 clipPath: 'polygon(0 0, 50% 100%, 100% 0)',
-                transformStyle: 'preserve-3d',
-                transform: isOpen ? 'rotateX(-180deg)' : 'rotateX(0deg)',
               }}
             />
             
@@ -103,17 +111,6 @@ With all my heart,
           </div>
         </div>
       </div>
-
-      {/* Letter (appears below envelope when opened) */}
-      {isOpen && (
-        <div className="mt-6 w-72 md:w-80 animate-fade-in-up">
-          <div className="paper-texture rounded-lg p-6 md:p-8 shadow-romantic">
-            <pre className="font-cursive text-lg md:text-xl text-foreground whitespace-pre-wrap leading-relaxed">
-              {letterContent}
-            </pre>
-          </div>
-        </div>
-      )}
 
       {/* Hint */}
       <p
