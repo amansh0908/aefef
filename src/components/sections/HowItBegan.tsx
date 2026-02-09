@@ -47,10 +47,9 @@ const HowItBegan = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <h2 className="font-romantic text-3xl md:text-4xl lg:text-5xl text-foreground">
-          Our Story
+        <h2 className="font-romantic text-4xl md:text-5xl lg:text-6xl text-foreground">
+          How It All Began…
         </h2>
-        <p className="text-muted-foreground mt-2 text-base">How it all began...</p>
       </div>
 
       {/* Timeline Cards */}
