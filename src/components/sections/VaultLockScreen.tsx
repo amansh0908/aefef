@@ -6,7 +6,7 @@ interface VaultLockScreenProps {
   onUnlock: () => void;
 }
 
-const CORRECT_PASSWORD = '27042024';
+const CORRECT_PASSWORD = '27042025';
 
 const VaultLockScreen = forwardRef<HTMLDivElement, VaultLockScreenProps>(({ onUnlock }, ref) => {
   const [password, setPassword] = useState('');
