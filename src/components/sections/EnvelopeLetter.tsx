@@ -66,8 +66,12 @@ With all my heart,
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {/* Letter (sits behind envelope, revealed when envelope slides down) */}
-        <div className="relative w-80 md:w-96 z-0">
+        {/* Letter (slides up from behind envelope) */}
+        <div
+          className={`w-80 md:w-96 transition-all duration-700 ease-in-out overflow-hidden ${
+            isOpen ? 'max-h-[600px] opacity-100 mb-4' : 'max-h-0 opacity-0 mb-0'
+          }`}
+        >
           <div className="paper-texture rounded-lg p-6 md:p-8 shadow-romantic">
             <pre className="font-cursive text-lg md:text-xl text-foreground whitespace-pre-wrap leading-relaxed">
               {letterContent}
@@ -75,12 +79,8 @@ With all my heart,
           </div>
         </div>
 
-        {/* Envelope (slides down to reveal letter) */}
-        <div
-          className={`absolute top-0 left-0 w-80 md:w-96 h-56 md:h-64 z-10 transition-all duration-700 ease-in-out ${
-            isOpen ? 'translate-y-[calc(100%+1.5rem)]' : 'translate-y-0'
-          }`}
-        >
+        {/* Envelope (stays at bottom) */}
+        <div className="relative w-80 md:w-96 h-56 md:h-64">
           <div className="absolute inset-0 bg-gradient-to-br from-peach to-cream rounded-lg shadow-romantic">
             {/* Envelope Back Flap */}
             <div
