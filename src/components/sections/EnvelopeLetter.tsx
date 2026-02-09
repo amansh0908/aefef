@@ -102,23 +102,18 @@ With all my heart,
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Letter (appears when opened) */}
-        <div
-          className={`absolute top-0 left-1/2 -translate-x-1/2 w-72 md:w-80 transition-all duration-700 ${
-            isOpen
-              ? 'opacity-100 -translate-y-full'
-              : 'opacity-0 translate-y-0 pointer-events-none'
-          }`}
-          style={{ transitionDelay: isOpen ? '0.3s' : '0s' }}
-        >
+      {/* Letter (appears below envelope when opened) */}
+      {isOpen && (
+        <div className="mt-6 w-72 md:w-80 animate-fade-in-up">
           <div className="paper-texture rounded-lg p-6 md:p-8 shadow-romantic">
             <pre className="font-cursive text-lg md:text-xl text-foreground whitespace-pre-wrap leading-relaxed">
               {letterContent}
             </pre>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Hint */}
       <p
