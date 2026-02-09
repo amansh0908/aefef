@@ -32,25 +32,11 @@ const OpenWhenLetters = () => {
       title: 'Open When You Miss Me',
       emoji: '💭',
       color: 'from-primary/80 to-lavender/80',
-      content: `My Dearest Shahin,
-
-If you're reading this, you're missing me. And guess what? 
-I'm probably missing you too, wherever I am.
-
-Close your eyes and remember all the beautiful moments 
-we've shared. Remember how we laugh together, how we 
-talk for hours, how even silence feels comfortable with us.
-
-Distance means nothing when someone means everything. 
-You are my everything, and no matter how far apart we are, 
-my heart is always with you.
-
-Just look at the moon tonight - I'll be looking at the same 
-one, thinking of you.
-
-I love you more than words can say.
-Forever yours,
-Aman ❤️`,
+      content: `
+      Remember that I am always with you in spirit.
+      Close your eyes and feel my hug. I love you! ❤️
+      Forever yours,
+      Aman ❤️`,
     },
     {
       title: "Open When You're Sad",
