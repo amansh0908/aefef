@@ -8,29 +8,29 @@
   :root {
     /* Soft Pastel Romance Palette */
     --background: 350 100% 98%;
-    --foreground: 340 30% 25%;
+    --foreground: 340 40% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 340 30% 25%;
+    --card-foreground: 340 40% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 340 30% 25%;
+    --popover-foreground: 340 40% 15%;
 
     /* Soft Rose Pink */
-    --primary: 340 82% 76%;
-    --primary-foreground: 340 30% 20%;
+    --primary: 340 82% 52%;
+    --primary-foreground: 340 40% 12%;
 
     /* Warm Peach */
     --secondary: 25 90% 88%;
-    --secondary-foreground: 25 40% 25%;
+    --secondary-foreground: 25 50% 18%;
 
     /* Gentle Lavender */
     --muted: 280 50% 93%;
-    --muted-foreground: 280 20% 45%;
+    --muted-foreground: 280 25% 30%;
 
     /* Cream Accent */
     --accent: 40 80% 92%;
-    --accent-foreground: 40 40% 25%;
+    --accent-foreground: 40 50% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
