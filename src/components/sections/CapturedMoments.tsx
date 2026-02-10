@@ -1,6 +1,58 @@
 import { useState, useEffect, useRef } from 'react';
 import { Camera } from 'lucide-react';
 
+interface Moment {
+  message: string;
+}
+
+const getImageCandidates = (cardNumber: number) => {
+  const formats = ['jpg', 'jpeg', 'png', 'webp', 'avif'];
+
+  return formats.flatMap((format) => [
+    `/moment-${cardNumber}.${format}`,
+    `/moment${cardNumber}.${format}`,
+    `/moments/moment-${cardNumber}.${format}`,
+    `/moments/moment${cardNumber}.${format}`,
+  ]);
+};
+
+const MomentImage = ({ cardNumber }: { cardNumber: number }) => {
+  const imageCandidates = getImageCandidates(cardNumber);
+  const [candidateIndex, setCandidateIndex] = useState(0);
+  const [showFallback, setShowFallback] = useState(false);
+
+  const handleImageError = () => {
+    if (candidateIndex < imageCandidates.length - 1) {
+      setCandidateIndex((prev) => prev + 1);
+      return;
+    }
+
+    setShowFallback(true);
+  };
+
+  return (
+    <>
+      <img
+        src={imageCandidates[candidateIndex]}
+        alt={`Moment ${cardNumber}`}
+        className={`w-full h-full object-cover ${showFallback ? 'hidden' : ''}`}
+        onError={handleImageError}
+      />
+      <div
+        className={`absolute inset-0 bg-gradient-to-br from-primary/20 to-lavender/20 flex flex-col items-center justify-center text-foreground ${
+          showFallback ? 'flex' : 'hidden'
+        }`}
+      >
+        <Camera className="w-12 h-12 mb-2" />
+        <span className="text-sm">Photo {cardNumber}</span>
+        <span className="text-xs mt-1 text-center px-2">
+          Add: public/moment-{cardNumber}.jpg (or .png/.jpeg/.webp)
+        </span>
+      </div>
+    </>
+  );
+};
+
 const CapturedMoments = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
@@ -33,31 +85,25 @@ const CapturedMoments = () => {
 
   // ============================================
   // 📸 CUSTOMIZE YOUR MOMENTS HERE:
-  // Replace placeholder images in public folder
+  // Upload files in public/ as moment-1.jpg ... moment-6.jpg
   // ============================================
-  const moments = [
+  const moments: Moment[] = [
     {
-      image: '/moment-1.jpg',
       message: 'The day we first met... my heart knew you were special ❤️',
     },
     {
-      image: '/moment-2.jpg',
       message: 'Your smile makes everything better 🌟',
     },
     {
-      image: '/moment-3.jpg',
       message: 'Adventures with you are my favorite 🌈',
     },
     {
-      image: '/moment-4.jpg',
       message: 'Every moment with you is precious 💫',
     },
     {
-      image: '/moment-5.jpg',
       message: 'You make my world complete 🌸',
     },
     {
-      image: '/moment-6.jpg',
       message: 'Forever grateful for us 💕',
     },
   ];
@@ -98,11 +144,11 @@ const CapturedMoments = () => {
             >
               {/* Front - Image */}
               <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-soft hover:shadow-romantic transition-shadow duration-300">
-              <img
-                    src={moment.image}
-                    alt={`Moment ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
+ codex/review-valentine-s-website-plan-ickyr3
+                <div className="w-full h-full bg-gradient-to-br from-muted to-lavender-light flex items-center justify-center">
+                  <MomentImage cardNumber={index + 1} />
+                </div>
+ main
                 <div className="absolute bottom-3 right-3 text-xs text-card/80 bg-foreground/30 backdrop-blur-sm px-2 py-1 rounded-full">
                   Tap to flip
                 </div>
