@@ -26,7 +26,7 @@ const Index = forwardRef(() => {
       <div className="fixed inset-0 bg-love-pattern opacity-30 pointer-events-none z-0" />
       
       {/* Music Player */}
-      <MusicPlayer />
+      <MusicPlayer autoPlay />
 
       {/* Main Content */}
       <main className="relative z-10">

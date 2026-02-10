@@ -109,7 +109,7 @@ const CapturedMoments = () => {
                       (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
                     }}
                   />
-                  <div className="hidden absolute inset-0 bg-gradient-to-br from-primary/20 to-lavender/20 flex flex-col items-center justify-center text-foreground/60">
+                  <div className="hidden absolute inset-0 bg-gradient-to-br from-primary/20 to-lavender/20 flex flex-col items-center justify-center text-foreground">
                     <Camera className="w-12 h-12 mb-2" />
                     <span className="text-sm">Photo {index + 1}</span>
                     <span className="text-xs mt-1">Add: public/moment-{index + 1}.jpg</span>
