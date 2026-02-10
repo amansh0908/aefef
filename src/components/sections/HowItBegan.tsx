@@ -77,7 +77,7 @@ const HowItBegan = () => {
                 <span className="text-xl">{moment.emoji}</span>
                 <h3 className="font-semibold text-lg text-foreground">{moment.title}</h3>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-[#4a2a35] text-sm leading-relaxed">
                 {moment.description}
               </p>
             </div>

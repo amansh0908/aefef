@@ -94,7 +94,7 @@ const MainReveal = () => {
             showQuote ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <p className="font-romantic text-xl md:text-2xl text-foreground italic mb-12 flex items-center justify-center gap-2">
+          <p className="font-romantic text-xl md:text-2xl text-[#3a1a24] italic mb-12 flex items-center justify-center gap-2">
             "My heart beats only for you"
             <Heart className="w-5 h-5 text-primary fill-primary animate-pulse" />
           </p>
