@@ -98,23 +98,11 @@ const CapturedMoments = () => {
             >
               {/* Front - Image */}
               <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-soft hover:shadow-romantic transition-shadow duration-300">
-                <div className="w-full h-full bg-gradient-to-br from-muted to-lavender-light flex items-center justify-center">
-                  <img
+              <img
                     src={moment.image}
                     alt={`Moment ${index + 1}`}
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Show placeholder if image not found
-                      (e.target as HTMLImageElement).style.display = 'none';
-                      (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                    }}
                   />
-                  <div className="hidden absolute inset-0 bg-gradient-to-br from-primary/20 to-lavender/20 flex flex-col items-center justify-center text-foreground">
-                    <Camera className="w-12 h-12 mb-2" />
-                    <span className="text-sm">Photo {index + 1}</span>
-                    <span className="text-xs mt-1">Add: public/moment-{index + 1}.jpg</span>
-                  </div>
-                </div>
                 <div className="absolute bottom-3 right-3 text-xs text-card/80 bg-foreground/30 backdrop-blur-sm px-2 py-1 rounded-full">
                   Tap to flip
                 </div>
