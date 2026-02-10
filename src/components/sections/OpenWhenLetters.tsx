@@ -134,7 +134,7 @@ Aman 💤`,
         <h2 className="font-romantic text-3xl md:text-4xl text-foreground">
           Open When… ✉️
         </h2>
-        <p className="text-muted-foreground mt-2">Click a letter when the moment feels right</p>
+        <p className="text-[#5b3441] mt-2">Click a letter when the moment feels right</p>
       </div>
 
       {/* Letters Grid */}
@@ -156,7 +156,7 @@ Aman 💤`,
               </div>
 
               {/* Title */}
-              <h3 className="font-romantic text-xl text-primary-foreground pr-12 group-hover:text-card transition-colors duration-300">
+              <h3 className="font-romantic text-xl text-[#2f1821] pr-12 transition-colors duration-300">
                 {letter.title}
               </h3>
 
@@ -179,15 +179,15 @@ Aman 💤`,
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">{letters[selectedLetter].emoji}</span>
-                  <h3 className="font-romantic text-2xl text-foreground">
+                  <h3 className="font-romantic text-2xl text-[#2f1821]">
                     {letters[selectedLetter].title}
                   </h3>
                 </div>
               </div>
 
               {/* Letter Content */}
-              <div className="paper-texture rounded-xl p-6">
-                <pre className="font-cursive text-lg text-foreground whitespace-pre-wrap leading-relaxed">
+              <div className="paper-texture rounded-xl p-6 border border-[#caa9b3]/40">
+                <pre className="font-cursive text-lg text-[#3a1a24] whitespace-pre-wrap leading-relaxed">
                   {letters[selectedLetter].content}
                 </pre>
               </div>
