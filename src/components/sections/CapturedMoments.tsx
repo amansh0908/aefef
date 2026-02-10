@@ -92,7 +92,7 @@ const CapturedMoments = () => {
             onClick={() => handleFlip(index)}
           >
             <div
-              className={`relative w-full h-64 md:h-72 preserve-3d transition-transform duration-700 ${
+              className={`relative w-full aspect-[4/3] preserve-3d transition-transform duration-700 ${
                 flippedCards.includes(index) ? 'rotate-y-180' : ''
               }`}
             >
