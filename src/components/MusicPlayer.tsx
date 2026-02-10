@@ -2,25 +2,21 @@ import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const MusicPlayer = () => {
+interface MusicPlayerProps {
+  autoPlay?: boolean;
+}
+
+const MusicPlayer = ({ autoPlay = false }: MusicPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
-
-  // ============================================
-  // 🎵 TO ADD YOUR MUSIC:
-  // 1. Add your MP3 file to the 'public' folder
-  // 2. Replace the src below with your filename
-  //    Example: src="/your-song.mp3"
-  // ============================================
+  const hasAutoPlayed = useRef(false);
 
   const handleToggle = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play().catch(() => {
-          // Autoplay blocked - user needs to interact
-        });
+        audioRef.current.play().catch(() => {});
       }
       setIsPlaying(!isPlaying);
     }
@@ -33,6 +29,15 @@ const MusicPlayer = () => {
       audio.volume = 0.5;
     }
   }, []);
+
+  useEffect(() => {
+    if (autoPlay && !hasAutoPlayed.current && audioRef.current) {
+      hasAutoPlayed.current = true;
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {});
+    }
+  }, [autoPlay]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">

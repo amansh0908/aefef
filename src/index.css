@@ -8,61 +8,61 @@
   :root {
     /* Soft Pastel Romance Palette */
     --background: 350 100% 98%;
-    --foreground: 340 40% 15%;
+    --foreground: 340 50% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 340 40% 15%;
+    --card-foreground: 340 50% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 340 40% 15%;
+    --popover-foreground: 340 50% 10%;
 
     /* Soft Rose Pink */
-    --primary: 340 82% 52%;
-    --primary-foreground: 340 40% 12%;
+    --primary: 340 82% 45%;
+    --primary-foreground: 0 0% 100%;
 
     /* Warm Peach */
     --secondary: 25 90% 88%;
-    --secondary-foreground: 25 50% 18%;
+    --secondary-foreground: 25 60% 15%;
 
     /* Gentle Lavender */
     --muted: 280 50% 93%;
-    --muted-foreground: 280 25% 30%;
+    --muted-foreground: 280 30% 25%;
 
     /* Cream Accent */
     --accent: 40 80% 92%;
-    --accent-foreground: 40 50% 18%;
+    --accent-foreground: 40 60% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 340 30% 88%;
     --input: 340 30% 88%;
-    --ring: 340 82% 76%;
+    --ring: 340 82% 45%;
 
     --radius: 1rem;
 
     /* Custom Romantic Colors */
-    --rose: 340 82% 76%;
+    --rose: 340 82% 45%;
     --rose-light: 340 70% 92%;
     --peach: 25 90% 88%;
-    --peach-dark: 25 60% 70%;
-    --lavender: 280 50% 85%;
+    --peach-dark: 25 60% 50%;
+    --lavender: 280 50% 65%;
     --lavender-light: 280 50% 93%;
     --cream: 40 80% 95%;
     --cream-dark: 40 50% 85%;
     --blush: 350 80% 90%;
-    --gold: 45 80% 65%;
-    --gold-light: 45 70% 80%;
+    --gold: 45 80% 50%;
+    --gold-light: 45 70% 70%;
 
     /* Romantic Gradients */
     --gradient-romantic: linear-gradient(135deg, hsl(340 82% 92%), hsl(280 50% 93%), hsl(25 90% 92%));
-    --gradient-love: linear-gradient(180deg, hsl(340 82% 76% / 0.3), hsl(280 50% 85% / 0.2));
-    --gradient-glow: radial-gradient(circle, hsl(340 82% 76% / 0.4), transparent 70%);
+    --gradient-love: linear-gradient(180deg, hsl(340 82% 45% / 0.3), hsl(280 50% 65% / 0.2));
+    --gradient-glow: radial-gradient(circle, hsl(340 82% 45% / 0.4), transparent 70%);
     
     /* Shadows */
-    --shadow-romantic: 0 10px 40px -10px hsl(340 82% 76% / 0.3);
+    --shadow-romantic: 0 10px 40px -10px hsl(340 82% 45% / 0.3);
     --shadow-soft: 0 4px 20px -4px hsl(340 30% 50% / 0.15);
-    --shadow-glow: 0 0 30px hsl(340 82% 76% / 0.4);
+    --shadow-glow: 0 0 30px hsl(340 82% 45% / 0.4);
   }
 
   .dark {
