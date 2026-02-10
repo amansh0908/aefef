@@ -56,7 +56,7 @@ With all my heart,
         <h2 className="font-romantic text-3xl md:text-4xl text-foreground mb-2">
           Read My Heart…
         </h2>
-        <p className="text-muted-foreground">Click the envelope to open</p>
+        <p className="text-[#5b3441]">Click the envelope to open</p>
       </div>
 
       {/* Envelope + Letter Container */}
@@ -73,7 +73,7 @@ With all my heart,
           }`}
         >
           <div className="paper-texture rounded-lg p-6 md:p-8 shadow-romantic">
-            <pre className="font-cursive text-lg md:text-xl text-foreground whitespace-pre-wrap leading-relaxed">
+            <pre className="font-cursive text-lg md:text-xl text-[#3a1a24] whitespace-pre-wrap leading-relaxed">
               {letterContent}
             </pre>
           </div>
@@ -114,7 +114,7 @@ With all my heart,
 
       {/* Hint */}
       <p
-        className={`mt-8 text-sm text-muted-foreground transition-opacity duration-500 ${
+        className={`mt-8 text-sm text-[#5b3441] transition-opacity duration-500 ${
           isOpen ? 'opacity-0' : 'opacity-100'
         }`}
       >
