@@ -144,11 +144,9 @@ const CapturedMoments = () => {
             >
               {/* Front - Image */}
               <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-soft hover:shadow-romantic transition-shadow duration-300">
- codex/review-valentine-s-website-plan-ickyr3
                 <div className="w-full h-full bg-gradient-to-br from-muted to-lavender-light flex items-center justify-center">
                   <MomentImage cardNumber={index + 1} />
                 </div>
- main
                 <div className="absolute bottom-3 right-3 text-xs text-card/80 bg-foreground/30 backdrop-blur-sm px-2 py-1 rounded-full">
                   Tap to flip
                 </div>
