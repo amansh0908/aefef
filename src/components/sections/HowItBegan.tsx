@@ -47,7 +47,7 @@ const HowItBegan = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <h2 className="font-romantic text-4xl md:text-5xl lg:text-6xl text-foreground">
+        <h2 className="font-romantic text-4xl md:text-5xl lg:text-6xl text-[#2f1821]">
           How It All Began…
         </h2>
       </div>
@@ -75,9 +75,9 @@ const HowItBegan = () => {
             >
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xl">{moment.emoji}</span>
-                <h3 className="font-semibold text-lg text-foreground">{moment.title}</h3>
+                <h3 className="font-semibold text-lg text-cream">{moment.title}</h3>
               </div>
-              <p className="text-[#4a2a35] text-sm leading-relaxed">
+              <p className="text-cream/90 text-sm leading-relaxed">
                 {moment.description}
               </p>
             </div>
