@@ -42,80 +42,36 @@ const OpenWhenLetters = () => {
       title: "Open When You're Sad",
       emoji: '🌧️',
       color: 'from-lavender/80 to-primary/80',
-      content: `My Sweet Shahin,
-
-I'm so sorry you're feeling down right now. 
-I wish I could be there to hold you tight.
-
-Remember this: Storms don't last forever. 
-The rain will stop, and the sun will shine again.
-
-You are stronger than you know, braver than you believe, 
-and more loved than you could ever imagine.
-
-Here's a virtual hug from me: 🤗
-
-Take a deep breath. Make yourself some tea. 
-Play your favorite song. And know that tomorrow 
-will be brighter.
-
-I believe in you, always.
-
-With endless love,
-Aman 💕`,
+      content: `
+      My Sweet Shahin,
+      It's okay to be sad sometimes. I'm here for you.
+      Take a deep breath, and know that this too shall pass.
+      You are strong and loved.
+      With endless love,
+      Aman 💕`,
     },
     {
       title: "Open When You're Happy",
       emoji: '🎉',
       color: 'from-peach/80 to-gold/60',
-      content: `My Wonderful Shahin!
-
-You're happy! That makes ME so incredibly happy too! 🎊
-
-Your happiness is the most beautiful thing in the world 
-to me. Seeing you smile, hearing you laugh - these are 
-the moments I live for.
-
-Whatever is making you happy right now, I hope you 
-treasure this feeling. You deserve all the happiness 
-in the universe!
-
-Keep shining, keep smiling, keep being the amazing 
-person you are. You light up my life every single day.
-
-Celebrating your joy with you!
-
-All my love,
-Aman 🌟`,
+      content: `
+      My Wonderful Shahin!
+      Yay! I'm so happy that you're happy!
+      Keep smiling, it looks beautiful on you. 😊
+      All my love,
+      Aman 🌟`,
     },
     {
       title: "Open When You Can't Sleep",
       emoji: '🌙',
       color: 'from-lavender/80 to-muted/80',
-      content: `My Darling Shahin,
-
-Can't sleep? Let me keep you company with my words.
-
-Close your eyes and imagine we're lying under the stars. 
-Feel the gentle breeze. Hear the peaceful silence. 
-I'm right there beside you.
-
-Think of all the dreams we have together - all the 
-adventures waiting for us, all the memories we'll create.
-
-Count the reasons why tomorrow will be beautiful. 
-One... you'll wake up and I'll still love you. 
-Two... there's coffee waiting. 
-Three... we have each other.
-
-Now take slow, deep breaths. 
-In... 2... 3... 4...
-Out... 2... 3... 4...
-
-Sweet dreams, my love. I'll see you there.
-
-Goodnight, beautiful.
-Aman 💤`,
+      content: `
+      My Darling Shahin,
+      Count our memories instead of sheep.
+      Think of our best dates and how much fun we have. 
+      Sweet dreams my love. 🌙
+      Goodnight, beautiful.
+      Aman 💤`,
     },
   ];
 
