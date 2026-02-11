@@ -159,7 +159,7 @@ const FinalSurprise = () => {
       {showProposal && !showFinal && (
         <div className="mt-16 text-center animate-fade-in-up">
           <h3 className="font-cursive text-4xl md:text-5xl lg:text-6xl text-primary animate-text-glow mb-8">
-            Will You Be My Valentine? 😍
+            Will You Be My Valentine? 👀
           </h3>
           <Button
             onClick={handleAlways}
