@@ -178,7 +178,7 @@ const FinalSurprise = () => {
           <h3 className="font-cursive text-4xl md:text-5xl text-primary mb-6">
             I Love You Forever! 💕
           </h3>
-          <p className="font-romantic text-lg md:text-xl text-foreground leading-relaxed">
+          <p className="font-romantic text-lg md:text-xl text-[#3a1a24] leading-relaxed">
             Thank you for being the most amazing person in my life. 
             Every day with you is a gift, and I promise to cherish 
             you forever. You are my heart, my soul, my everything.
